@@ -1,12 +1,12 @@
 <template>
   <header>
-    <h1>SinglePost</h1>
+    <h1>About</h1>
   </header>
 </template>
 
 <script>
   export default {
-    name : 'SinglePost',
+    name : 'About',
   }
 </script>
 

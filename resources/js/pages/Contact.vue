@@ -1,12 +1,12 @@
 <template>
   <header>
-    <h1>SinglePost</h1>
+    <h1>Contacts</h1>
   </header>
 </template>
 
 <script>
   export default {
-    name : 'SinglePost',
+    name : 'Contact',
   }
 </script>
 
