@@ -2135,6 +2135,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SinglePost'
 });
@@ -3491,7 +3492,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("header", [_c("h1", [_vm._v("About")])])
+    return _c("div", { staticClass: "container" }, [
+      _c("h1", [_vm._v("About")]),
+    ])
   },
 ]
 render._withStripped = true
@@ -3522,7 +3525,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("header", [_c("h1", [_vm._v("Contacts")])])
+    return _c("div", { staticClass: "container" }, [
+      _c("h1", [_vm._v("Contacts")]),
+    ])
   },
 ]
 render._withStripped = true
@@ -3553,7 +3558,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("header", [_c("h1", [_vm._v("Welcome..")])])
+    return _c("div", { staticClass: "container" }, [
+      _c("h1", [_vm._v("Welcome..")]),
+    ])
   },
 ]
 render._withStripped = true
@@ -3685,16 +3692,13 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _c("h1", [_vm._v("SinglePost")]),
+    _vm._v(" "),
+    _c("span", [_vm._v("This Post is: " + _vm._s(_vm.$route.params.slug))]),
+  ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("header", [_c("h1", [_vm._v("SinglePost")])])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

@@ -1,7 +1,8 @@
 <template>
-  <header>
+  <div class="container">
     <h1>SinglePost</h1>
-  </header>
+    <span>This Post is: {{$route.params.slug}}</span>
+  </div>
 </template>
 
 <script>
