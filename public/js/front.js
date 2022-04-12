@@ -1935,6 +1935,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Header'
 });
@@ -3226,14 +3251,100 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("header", [
+    _c("nav", { staticClass: "navbar navbar-expand navbar-light bg-light" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("h2", [_vm._v("Boolpress")]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "collapse navbar-collapse justify-content-between",
+            attrs: { id: "navbarButtonsExample" },
+          },
+          [
+            _c("ul", { staticClass: "navbar-nav me-auto mb-2 mb-lg-0" }, [
+              _c(
+                "li",
+                { staticClass: "nav-item ml-5" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "nav-link",
+                      attrs: { to: { name: "home" } },
+                    },
+                    [_vm._v("Homepage")]
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "li",
+                { staticClass: "nav-item ml-5" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "nav-link",
+                      attrs: { to: { name: "contacts" } },
+                    },
+                    [_vm._v("Contacts")]
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "li",
+                { staticClass: "nav-item ml-5" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "nav-link",
+                      attrs: { to: { name: "about" } },
+                    },
+                    [_vm._v("About")]
+                  ),
+                ],
+                1
+              ),
+            ]),
+            _vm._v(" "),
+            _vm._m(0),
+          ]
+        ),
+      ]),
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("header", [_c("h1", [_vm._v("Header")])])
+    return _c(
+      "div",
+      {
+        staticClass: "navbar-nav d-flex align-items-center justify-content-end",
+      },
+      [
+        _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+          _vm._v("\n            Admin\n          "),
+        ]),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-dark px-3",
+            attrs: { href: "https://github.com/Alessio2299" },
+          },
+          [_c("i", { staticClass: "fab fa-github" })]
+        ),
+      ]
+    )
   },
 ]
 render._withStripped = true
