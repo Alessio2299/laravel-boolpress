@@ -2253,7 +2253,15 @@ __webpack_require__.r(__webpack_exports__);
         } else {
           _this.post = response.data.response;
           _this.flag = true;
+
+          _this.getRelatedPost();
         }
+      });
+    },
+    getRelatedPost: function getRelatedPost() {
+      var urlId = this.post.category_id;
+      axios.get('/api/category/' + urlId).then(function (response) {
+        console.log(response);
       });
     }
   },

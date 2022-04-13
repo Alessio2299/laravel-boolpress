@@ -40,12 +40,21 @@
           } else{
             this.post = response.data.response;
             this.flag = true;
+            this.getRelatedPost();
           }
+        })
+      },
+      getRelatedPost(){
+        const urlId = this.post.category_id
+        axios.get('/api/category/' + urlId)
+        .then(response =>{
+          console.log(response)
         })
       }
     },
     mounted(){
       this.getPost();
+      
     }
   }
 </script>

@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/posts', 'Api\PostController@index');
 
 Route::get('/posts/{slug}', 'Api\PostController@show');
+
+Route::get('/category/{$id}', 'Api\CategoryController@show');
+
