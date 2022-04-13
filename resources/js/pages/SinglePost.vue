@@ -10,6 +10,10 @@
         :updated="dayCreatedPost(post.updated_at)"
         :tags="post.tags"
       />
+      <div class="relatedPosts">
+        <h3 class="d-inline-block">If you like this post, perhaps this could also be interested in:</h3>
+        <router-link class="ml-3 h3 text-decoration-none" v-for="recommendedPost in recommendedPosts" :key="recommendedPost.id" :to="{name: 'singlePost', params:{slug: recommendedPost.slug}}">{{recommendedPost.title}}</router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -21,7 +25,9 @@
     data(){
       return{
         post: null,
-        flag: false
+        relatedPosts: null,
+        flag: false,
+        recommendedPosts: []
       }
     },
     components:{
@@ -48,13 +54,19 @@
         const urlId = this.post.category_id
         axios.get('/api/category/' + urlId)
         .then(response =>{
-          console.log(response)
+          this.relatedPosts = response.data.response;
+          if(this.relatedPosts){
+            for(let i = 0; i < this.relatedPosts.length; i++){
+              if(this.relatedPosts[i].slug != this.post.slug){
+                this.recommendedPosts.push(this.relatedPosts[i]);
+              }
+            }
+          }
         })
       }
     },
     mounted(){
       this.getPost();
-      
     }
   }
 </script>

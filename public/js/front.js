@@ -2225,13 +2225,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SinglePost',
   data: function data() {
     return {
       post: null,
-      flag: false
+      relatedPosts: null,
+      flag: false,
+      recommendedPosts: []
     };
   },
   components: {
@@ -2259,9 +2265,19 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     getRelatedPost: function getRelatedPost() {
+      var _this2 = this;
+
       var urlId = this.post.category_id;
       axios.get('/api/category/' + urlId).then(function (response) {
-        console.log(response);
+        _this2.relatedPosts = response.data.response;
+
+        if (_this2.relatedPosts) {
+          for (var i = 0; i < _this2.relatedPosts.length; i++) {
+            if (_this2.relatedPosts[i].slug != _this2.post.slug) {
+              _this2.recommendedPosts.push(_this2.relatedPosts[i]);
+            }
+          }
+        }
       });
     }
   },
@@ -4000,6 +4016,36 @@ var render = function () {
               },
             })
           : _vm._e(),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "relatedPosts" },
+          [
+            _c("h3", { staticClass: "d-inline-block" }, [
+              _vm._v(
+                "If you like this post, perhaps this could also be interested in:"
+              ),
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.recommendedPosts, function (recommendedPost) {
+              return _c(
+                "router-link",
+                {
+                  key: recommendedPost.id,
+                  staticClass: "ml-3 h3 text-decoration-none",
+                  attrs: {
+                    to: {
+                      name: "singlePost",
+                      params: { slug: recommendedPost.slug },
+                    },
+                  },
+                },
+                [_vm._v(_vm._s(recommendedPost.title))]
+              )
+            }),
+          ],
+          2
+        ),
       ],
       1
     ),

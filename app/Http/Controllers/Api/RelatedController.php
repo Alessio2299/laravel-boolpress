@@ -3,26 +3,25 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Category;
+use App\Post;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class RelatedController extends Controller
 {
+
     /**
-     * Display a listing of the resource.
+     * Display the specified resource.
      *
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
     public function show($id)
     {
-        $relatedPosts = Category::where('id', $id)->with(['post'])->get();
+        $relatedPosts = Post::where('category_id', $id)->with(['category','tags'])->get();
         
         return response()->json([
             'response' => $relatedPosts,
             'success' => true
         ]);
     }
-
-    
 }
