@@ -1,8 +1,8 @@
 <template>
   <header>
-    <nav class="navbar navbar-expand navbar-light bg-light">
+    <nav class="navbar navbar-expand navbar-dark bg-dark mb-5">
       <div class="container">
-        <router-link class="nav-link" :to="{name : 'home'}"><h2>Boolpress</h2></router-link>
+        <router-link class="nav-link" :to="{name : 'home'}"><h2 class="text-white">Boolpress</h2></router-link>
 
         <div class="collapse navbar-collapse justify-content-between" id="navbarButtonsExample">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -12,10 +12,8 @@
           </ul>
 
           <div class="navbar-nav d-flex align-items-center justify-content-end">
-            <a href="/admin" class="nav-link">
-              Admin
-            </a>
-            <a class="btn btn-dark px-3" target="_blank" href="https://github.com/Alessio2299"><i class="fab fa-github"></i></a>
+            <a href="/admin" class="nav-link">Admin</a>
+            <a class="btn btn-light px-3 py-1 ml-4" target="_blank" href="https://github.com/Alessio2299"><i class="fab fa-github"></i></a>
           </div>
         </div>
       </div>
@@ -47,6 +45,9 @@
   }
 </script>
 
-<style>
+<style lang="scss" scoped>
+  .fa-github{
+    font-size: 25px;
+  }
+</style>>
 
-</style>

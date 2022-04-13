@@ -1,13 +1,16 @@
 <template>
   <div class="container">
-    <Card 
-      :title="post.title"
-      :category="post.category"
-      :description="post.description"
-      :url="post.url"
-      :updated="dayCreatedPost(post.updated_at)"
-      :tags="post.tags"
-    />
+    <div class="row">
+      <Card
+        v-if="flag"
+        :title="post.title"
+        :category="post.category"
+        :description="post.description"
+        :url="post.url"
+        :updated="dayCreatedPost(post.updated_at)"
+        :tags="post.tags"
+      />
+    </div>
   </div>
 </template>
 
@@ -17,7 +20,8 @@
     name : 'SinglePost',
     data(){
       return{
-        post: null
+        post: null,
+        flag: false
       }
     },
     components:{
@@ -35,6 +39,7 @@
             this.$router.push({name: 'page-error'});
           } else{
             this.post = response.data.response;
+            this.flag = true;
           }
         })
       }
