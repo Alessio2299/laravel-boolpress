@@ -6,14 +6,8 @@
 
         <div class="collapse navbar-collapse justify-content-between" id="navbarButtonsExample">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item ml-5">
-              <router-link class="nav-link" :to="{name : 'posts'}">Posts</router-link>
-            </li>
-            <li class="nav-item ml-5">
-              <router-link class="nav-link" :to="{name : 'contacts'}">Contacts</router-link>
-            </li>
-            <li class="nav-item ml-5">
-              <router-link class="nav-link" :to="{name : 'about'}">About</router-link>
+            <li class="nav-item ml-5" v-for="(link,index) in navLink" :key="index">
+              <router-link class="nav-link" :to="{name : link.urlName}">{{link.name}}</router-link>
             </li>
           </ul>
 
@@ -32,6 +26,24 @@
 <script>
   export default {
     name : 'Header',
+    data(){
+      return{
+        navLink: [
+          {
+            urlName: 'posts',
+            name: 'Posts'
+          },
+          {
+            urlName: 'contacts',
+            name: 'Contacts'
+          },
+          {
+            urlName: 'about',
+            name: 'About'
+          }
+        ]
+      }
+    }
   }
 </script>
 

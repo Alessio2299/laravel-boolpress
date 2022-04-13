@@ -1954,14 +1954,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Header'
+  name: 'Header',
+  data: function data() {
+    return {
+      navLink: [{
+        urlName: 'posts',
+        name: 'Posts'
+      }, {
+        urlName: 'contacts',
+        name: 'Contacts'
+      }, {
+        urlName: 'about',
+        name: 'About'
+      }]
+    };
+  }
 });
 
 /***/ }),
@@ -3512,55 +3520,28 @@ var render = function () {
               attrs: { id: "navbarButtonsExample" },
             },
             [
-              _c("ul", { staticClass: "navbar-nav me-auto mb-2 mb-lg-0" }, [
-                _c(
-                  "li",
-                  { staticClass: "nav-item ml-5" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { to: { name: "posts" } },
-                      },
-                      [_vm._v("Posts")]
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  { staticClass: "nav-item ml-5" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { to: { name: "contacts" } },
-                      },
-                      [_vm._v("Contacts")]
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  { staticClass: "nav-item ml-5" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { to: { name: "about" } },
-                      },
-                      [_vm._v("About")]
-                    ),
-                  ],
-                  1
-                ),
-              ]),
+              _c(
+                "ul",
+                { staticClass: "navbar-nav me-auto mb-2 mb-lg-0" },
+                _vm._l(_vm.navLink, function (link, index) {
+                  return _c(
+                    "li",
+                    { key: index, staticClass: "nav-item ml-5" },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "nav-link",
+                          attrs: { to: { name: link.urlName } },
+                        },
+                        [_vm._v(_vm._s(link.name))]
+                      ),
+                    ],
+                    1
+                  )
+                }),
+                0
+              ),
               _vm._v(" "),
               _vm._m(0),
             ]
