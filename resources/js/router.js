@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import Posts from './pages/Posts';
 import SinglePost from './pages/SinglePost';
+import PageError from './pages/PageError';
 
 const router = new VueRouter({
   mode: 'history',
@@ -34,8 +35,13 @@ const router = new VueRouter({
     },
     {
       path: '/post/:slug',
-      name: 'SinglePost',
+      name: 'singlePost',
       component: SinglePost
+    },
+    {
+      path: '/:patchMatch(.*)*',
+      name: 'page-error',
+      component: PageError
     }
   ]
 });
