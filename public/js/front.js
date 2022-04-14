@@ -2229,6 +2229,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SinglePost',
@@ -2283,7 +2285,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.getPost();
-  }
+  },
+  updated: function updated() {}
 });
 
 /***/ }),
@@ -4029,18 +4032,18 @@ var render = function () {
             _vm._v(" "),
             _vm._l(_vm.recommendedPosts, function (recommendedPost) {
               return _c(
-                "router-link",
-                {
-                  key: recommendedPost.id,
-                  staticClass: "ml-3 h3 text-decoration-none",
-                  attrs: {
-                    to: {
-                      name: "singlePost",
-                      params: { slug: recommendedPost.slug },
+                "div",
+                { key: recommendedPost.id, staticClass: "d-inline-block" },
+                [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "ml-3 h3 text-decoration-none",
+                      attrs: { href: recommendedPost.slug },
                     },
-                  },
-                },
-                [_vm._v(_vm._s(recommendedPost.title))]
+                    [_vm._v(_vm._s(recommendedPost.title))]
+                  ),
+                ]
               )
             }),
           ],

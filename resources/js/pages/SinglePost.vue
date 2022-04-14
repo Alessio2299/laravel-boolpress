@@ -12,7 +12,9 @@
       />
       <div class="relatedPosts">
         <h3 class="d-inline-block">If you like this post, perhaps this could also be interested in:</h3>
-        <router-link class="ml-3 h3 text-decoration-none" v-for="recommendedPost in recommendedPosts" :key="recommendedPost.id" :to="{name: 'singlePost', params:{slug: recommendedPost.slug}}">{{recommendedPost.title}}</router-link>
+        <div class="d-inline-block" v-for="recommendedPost in recommendedPosts" :key="recommendedPost.id">
+          <a class="ml-3 h3 text-decoration-none" :href="recommendedPost.slug">{{recommendedPost.title}}</a>
+        </div>
       </div>
     </div>
   </div>
@@ -27,7 +29,7 @@
         post: null,
         relatedPosts: null,
         flag: false,
-        recommendedPosts: []
+        recommendedPosts: [],
       }
     },
     components:{
@@ -67,6 +69,8 @@
     },
     mounted(){
       this.getPost();
+    },
+    updated(){
     }
   }
 </script>
