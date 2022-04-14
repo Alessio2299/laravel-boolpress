@@ -23,7 +23,11 @@
             </thead>
             <tbody>
                     <tr>
-                        <td><img class="w-50" src="{{$post->url}}" alt="{{$post->title}}"></td>
+                        @if ($post->image)
+                            <td><img class="w-50" src="{{asset('storage/' . $post->image)}}" alt="{{$post->title}}"></td> 
+                        @else
+                            <td><img class="w-50" src="{{asset('img/hacker-4031973_1920.jpg')}}" alt="{{$post->title}}"></td>
+                        @endif
                         <td>{{$post->title}}</td>
                         <td>{{$post->description}}</td>
                         <td>{{$post->slug}}</td>

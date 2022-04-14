@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
       <h1>Edit Post</h1>
-      <form method="POST" action="{{route('admin.posts.update', $post->id)}}">
+      <form method="POST" action="{{route('admin.posts.update', $post->id)}}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="form-group">
@@ -13,8 +13,8 @@
           <input type="text" class="form-control" name="title" placeholder="Add Title" value="{{old('title', $post->title)}}">
         </div>
         <div class="form-group">
-          <label for="url">Url</label>
-          <input type="text" class="form-control" name="url" placeholder="Add Url Image" value="{{old('url', $post->url)}}">
+          <label for="image">Load Image</label>
+          <input class="form-control pb-5 pt-3" type="file" id="name" name="image">
         </div>
         <div class="form-group">
           <label for="category_id">Category</label>

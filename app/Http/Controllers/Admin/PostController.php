@@ -10,7 +10,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
-
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -47,13 +47,19 @@ class PostController extends Controller
     {
         $request->validate([
             'title' => 'required|min:1',
-            'url' => 'nullable|url',
+            'image' => 'nullable|image|max:2048',
             'description' => 'nullable|min:5',
             'category_id' => 'exists:categories,id',
             'tags' => 'nullable|exists:tags,id'
         ]);
 
         $data = $request->all();
+        if(isset($data['image'])){
+            $img_cover = Storage::put('img_cover', $data['image']);
+            $data['image'] = $img_cover;
+        }
+        
+
         $slug = Str::slug($data['title']);
         $counter = 1;
 
@@ -61,8 +67,6 @@ class PostController extends Controller
             $slug = Str::slug($data['title']) . '-' . $counter;
             $counter++;
         }
-
-        
 
         $data['slug'] = $slug;
         $post->fill($data);
@@ -111,7 +115,7 @@ class PostController extends Controller
     {
         $request->validate([
             'title' => 'required|min:1',
-            'url' => 'nullable|url',
+            'image' => 'nullable|image|max:2048',
             'description' => 'nullable|min:5',
             'category_id' => 'nullable|exists:categories,id',
             'tags' => 'nullable|exists:tags,id'
@@ -132,6 +136,15 @@ class PostController extends Controller
             $data['slug'] = $slug;
         }
         
+        Storage::delete($post->image);
+        
+        if(isset($data['image'])){
+            $img_cover = Storage::put('img_cover', $data['image']);
+            $data['image'] = $img_cover;
+        }
+        
+
+
         $post->update($data);
         $post->save();
 
@@ -150,6 +163,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        Storage::delete($post->image);
         $post->delete();
         return redirect()->route('admin.posts.index');
     }

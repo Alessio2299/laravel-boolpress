@@ -1,17 +1,19 @@
 @extends('layouts.app')
+
 @section('title','Create Post')
+
 @section('content')
     <div class="container">
       <h1>Create Post</h1>
-      <form method="POST" action="{{route('admin.posts.store')}}">
+      <form method="POST" action="{{route('admin.posts.store')}}" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
           <label for="title">Title</label>
           <input type="text" class="form-control" name="title" placeholder="Add Title" value=" {{old('title')}}">
         </div>
         <div class="form-group">
-          <label for="url">Url</label>
-          <input type="text" class="form-control" name="url" placeholder="Add Url Image" value="{{old('url')}}">  
+          <label for="image">Load Image</label>
+          <input class="form-control pb-5 pt-3" type="file" id="name" name="image">
         </div>
         <div class="form-group">
           <label for="category_id">Category</label>
