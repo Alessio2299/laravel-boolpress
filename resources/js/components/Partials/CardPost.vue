@@ -10,7 +10,7 @@
           </div>
         </div>
         <p>{{description}}</p>
-        <img :src="url" class="my_img">
+        <img :src="image" class="my_img">
         <div v-if="tags">
           <span class="btn btn-primary mr-2 mt-3" v-for="tag in tags" :key="tag.id">{{tag.name}}</span>
         </div>
@@ -28,7 +28,7 @@
       title: String,
       category: Object,
       description: String,
-      url: String,
+      image: String,
       updated: String,
       tags: Array
     }

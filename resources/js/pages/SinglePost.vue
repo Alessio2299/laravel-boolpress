@@ -6,7 +6,7 @@
         :title="post.title"
         :category="post.category"
         :description="post.description"
-        :url="post.url"
+        :image="post.image"
         :updated="dayCreatedPost(post.updated_at)"
         :tags="post.tags"
       />

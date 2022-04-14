@@ -17,6 +17,14 @@ class PostController extends Controller
     {
         $posts = Post::with(['category','tags'])->paginate(2);
 
+        $posts->each(function($post){
+            if($post->image){
+                $post->image = url('storage/' . $post->image);
+            }else{
+                $post->image = url('img/hacker-4031973_1920.jpg');
+            }
+            
+        });
         return response()->json([
             'response' => $posts,
             'success' => true
@@ -26,6 +34,12 @@ class PostController extends Controller
     {
         $post = Post::Where('slug', $slug)->with(['category','tags'])->first();   
 
+        if($post->image){
+            $post->image = url('storage/' . $post->image);
+        }else{
+            $post->image = url('img/hacker-4031973_1920.jpg');
+        }
+        
         if($post){
             return response()->json([
                 'response' => $post,

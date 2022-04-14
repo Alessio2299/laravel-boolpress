@@ -2031,7 +2031,7 @@ __webpack_require__.r(__webpack_exports__);
     title: String,
     category: Object,
     description: String,
-    url: String,
+    image: String,
     updated: String,
     tags: Array
   }
@@ -3729,7 +3729,7 @@ var render = function () {
         _vm._v(" "),
         _c("p", [_vm._v(_vm._s(_vm.description))]),
         _vm._v(" "),
-        _c("img", { staticClass: "my_img", attrs: { src: _vm.url } }),
+        _c("img", { staticClass: "my_img", attrs: { src: _vm.image } }),
         _vm._v(" "),
         _vm.tags
           ? _c(
@@ -3934,7 +3934,7 @@ var render = function () {
                 title: post.title,
                 category: post.category,
                 description: post.description,
-                url: post.url,
+                image: post.image,
                 updated: _vm.dayCreatedPost(post.updated_at),
                 tags: post.tags,
               },
@@ -4010,7 +4010,7 @@ var render = function () {
                 title: _vm.post.title,
                 category: _vm.post.category,
                 description: _vm.post.description,
-                url: _vm.post.url,
+                image: _vm.post.image,
                 updated: _vm.dayCreatedPost(_vm.post.updated_at),
                 tags: _vm.post.tags,
               },

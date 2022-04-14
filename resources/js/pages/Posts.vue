@@ -1,13 +1,12 @@
 <template>
   <div class="container">
     <div class="row">
-      <div>
       <router-link v-for="post in posts" :key="post.id" class=" nav-link text-dark" :to="{name: 'singlePost', params:{slug: post.slug}}">
         <Card 
         :title="post.title"
         :category="post.category"
         :description="post.description"
-        :url="post.url"
+        :image="post.image"
         :updated="dayCreatedPost(post.updated_at)"
         :tags="post.tags"
         />
