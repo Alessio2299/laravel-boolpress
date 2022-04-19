@@ -2100,6 +2100,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Contact',
   data: function data() {
@@ -2108,7 +2111,8 @@ __webpack_require__.r(__webpack_exports__);
       email: '',
       message: '',
       errors: {},
-      send: false
+      send: false,
+      sentSuccessfully: false
     };
   },
   methods: {
@@ -2129,6 +2133,7 @@ __webpack_require__.r(__webpack_exports__);
           _this.name = '';
           _this.email = '';
           _this.message = '';
+          _this.sentSuccessfully = true;
         }
       });
     }
@@ -3882,6 +3887,14 @@ var render = function () {
         },
       },
       [
+        _vm.sentSuccessfully
+          ? _c(
+              "div",
+              { staticClass: "alert alert-success", attrs: { role: "alert" } },
+              [_vm._v("\n      Email sent successfully\n    ")]
+            )
+          : _vm._e(),
+        _vm._v(" "),
         _c(
           "div",
           { staticClass: "mb-3" },

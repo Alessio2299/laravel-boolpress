@@ -2,6 +2,9 @@
   <div class="container mb-5">
     <h1>Contact us</h1>
     <form @submit.prevent="sendMail()">
+      <div v-if='sentSuccessfully' class="alert alert-success" role="alert">
+        Email sent successfully
+      </div>
       <div class="mb-3">
         <label for="name" class="form-label">Name:</label>
         <input type="text" class="form-control" :class="errors.name ? 'is-invalid' : ''" id="exampleInputEmail1" name="name" v-model="name">
@@ -37,7 +40,8 @@
         email: '',
         message: '',
         errors: {},
-        send: false
+        send: false,
+        sentSuccessfully: false
       }
     },
     methods:{
@@ -57,6 +61,7 @@
             this.name = '';
             this.email = '';
             this.message = '';
+            this.sentSuccessfully = true;
           }
         })
       }
