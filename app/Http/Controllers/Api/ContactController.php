@@ -24,7 +24,7 @@ class ContactController extends Controller
 
         if($validator->fails()){
             return response()->json([
-                'succes' => false,
+                'success' => false,
                 'errors' => $validator->errors()
             ]);
         }
@@ -37,8 +37,7 @@ class ContactController extends Controller
         Mail::to('info@adminboolpress.com')->send(new SendNewMail($lead));
 
         return response()->json([
-            'succes' => true,
-            'data' => $data
+            'success' => true
         ]); 
     }
 }
