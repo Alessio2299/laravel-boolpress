@@ -1,6 +1,14 @@
 <template>
-  <div class="container">
-    <h1>Error 404</h1>
+  <div class="container pt-3">
+    <div id="notfound">
+      <div class="notfound">
+        <div class="notfound-404">
+          <h3>Oops! Page not found</h3>
+          <h1><span>4</span><span>0</span><span>4</span></h1>
+        </div>
+        <h2>we are sorry, but the page you requested was not found</h2>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -10,6 +18,63 @@
   }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  .container{
+    height: calc(100vh - 87px - 74.55px); 
+    #notfound{
+      position: relative;
+      height: calc(100vh - 87px - 74.55px); 
+      .notfound{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 520px;
+        width: 100%;
+        line-height: 1.4;
+        text-align: center;
+        .notfound-404{
+          position: relative;
+          height: 240px;
+          h3{
+            font-family: 'Cabin', sans-serif;
+            position: relative;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #262626;
+            margin: 0px;
+            letter-spacing: 3px;
+            padding-left: 6px;
+          }
+          h1{
+            font-family: 'Montserrat', sans-serif;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 252px;
+            font-weight: 900;
+            margin: 0px;
+            color: #262626;
+            text-transform: uppercase;
+            letter-spacing: -40px;
+            margin-left: -20px;
+          }
+          span{
+            text-shadow: -8px 0px 0px #fff;
+          }
+        }
+        h2{
+          font-family: 'Cabin', sans-serif;
+          font-size: 20px;
+          font-weight: 400;
+          text-transform: uppercase;
+          color: #000;
+          margin-top: 0px;
+          margin-bottom: 25px;
+        }
+      }
+    }
+  }
 </style>

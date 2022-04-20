@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
+  <div class="container pt-3">
     <div class="row">
-      <router-link v-for="post in posts" :key="post.id" class=" nav-link text-dark" :to="{name: 'singlePost', params:{slug: post.slug}}">
+      <router-link v-for="post in posts" :key="post.id" class="col-6 nav-link text-dark" :to="{name: 'singlePost', params:{slug: post.slug}}">
         <Card 
         :title="post.title"
         :category="post.category"

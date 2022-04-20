@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container pt-3">
     <div class="row">
       <Card
         v-if="flag"
@@ -10,7 +10,7 @@
         :updated="dayCreatedPost(post.updated_at)"
         :tags="post.tags"
       />
-      <div class="relatedPosts">
+      <div class="relatedPosts py-3">
         <h3 class="d-inline-block">If you like this post, perhaps this could also be interested in:</h3>
         <div class="d-inline-block" v-for="recommendedPost in recommendedPosts" :key="recommendedPost.id">
           <a class="ml-3 h3 text-decoration-none" :href="recommendedPost.slug">{{recommendedPost.title}}</a>

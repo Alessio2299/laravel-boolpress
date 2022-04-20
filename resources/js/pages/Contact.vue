@@ -1,5 +1,5 @@
 <template>
-  <div class="container mb-5">
+  <div class="container pt-3">
     <h1>Contact us</h1>
     <form @submit.prevent="sendMail()">
       <div v-if='sentSuccessfully' class="alert alert-success" role="alert">
@@ -69,6 +69,8 @@
   }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  .container{
+    height: calc(100vh - 87px - 74.55px); 
+  }
 </style>
