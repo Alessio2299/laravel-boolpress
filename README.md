@@ -59,3 +59,19 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+<img width="1440" alt="Schermata 2022-04-26 alle 17 00 00" src="https://user-images.githubusercontent.com/93378720/165330686-7da92a85-88c9-4ba8-9bf6-d1caf873cc40.png">
+<img width="1440" alt="Schermata 2022-04-26 alle 17 00 05" src="https://user-images.githubusercontent.com/93378720/165330696-e8f64d3a-75f2-4dbc-88f0-d7ffa9c12902.png">
+<img width="1440" alt="Schermata 2022-04-26 alle 17 00 11" src="https://user-images.githubusercontent.com/93378720/165330707-0a347969-38ec-4bbc-b3bd-aa49393dc72a.png">
+<img width="1440" alt="Schermata 2022-04-26 alle 17 00 30" src="https://user-images.githubusercontent.com/93378720/165330722-5faae526-ef81-4790-a699-4a3463d26e32.png">
+
+<img width="1440" alt="Schermata 2022-04-26 alle 17 00 36" src="https://user-images.githubusercontent.com/93378720/165330736-fb39d8f9-3a35-4884-aecd-ac918e1a8d99.png">
+<img width="1440" alt="Schermata 2022-04-26 alle 17 00 44" src="https://user-images.githubusercontent.com/93378720/165330749-39e3721c-ce9b-4556-9acb-aa464c158ac5.png">
+<img width="1440" alt="Schermata 2022-04-26 alle 17 00 44 1" src="https://user-images.githubusercontent.com/93378720/165330757-19587527-20f2-41f0-8b8c-c85a4dbda165.png">
+
+
+
+
+
+
+
